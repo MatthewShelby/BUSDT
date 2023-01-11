@@ -1,6 +1,10 @@
 //Paste the contract address here.
 //You really should to go f**k yourself if you don't know where to copy the contract addres from.
-const contractAddress = "0x51d7fdf2A714139C9F402E708482a2e60078B677";
+const contractAddress = "0x3F63F2892c3497028673C5e6BE9DcEd2E06c6649";
+
+
+// Testnet
+//const contractAddress = "0x51d7fdf2A714139C9F402E708482a2e60078B677";
 
 
 //Sets how long a cookie would be available in the browser. 
