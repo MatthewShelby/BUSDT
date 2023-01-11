@@ -20,6 +20,7 @@ function metamaskOK() {
             //document.getElementById('cw-btn').classList.remove('d-inline-flex');
             document.getElementById('cw-btn').style.display = 'none';
             document.getElementById('info').style.display = 'block';
+            document.getElementById('info').style.display = 'ttrr';
             document.getElementById('network-name').innerHTML = res.name;
 
             ensAddress = res.ensAddress;
