@@ -8,11 +8,11 @@
 
 document.getElementById('cw-btn').addEventListener('click', StartContract)
 // StartContract();
-var n = provider.getBlockNumber().then(function (ret) {
-      //console.info(ret)
-      var nn = provider.getNetwork();
-      //console.info(nn);
-});
+// var n = provider.getBlockNumber().then(function (ret) {
+//       //console.info(ret)
+//       var nn = provider.getNetwork();
+//       //console.info(nn);
+// });
 
 var balance;
 function metamaskOK() {
