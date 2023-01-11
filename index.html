@@ -1,0 +1,219 @@
+<!-- #030B15 -->
+<!-- #00C4F4 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Stable Credit</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      <link rel="stylesheet" href="assets/css/fonts.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="icon" type="image/png" href="./favicon.ico">
+      <!-- 
+      <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png"> -->
+</head>
+
+<body>
+      <div class="pagenav">
+            <div class="pagenav-bar d-flex justify-content-between">
+                  <div style="width: 30%;  ">
+                        <img src="assets/img/Coin.svg" alt="" style="margin-top:-50px">
+                  </div>
+                  <div style="width: 30%;  ">
+
+                        <div class="btn-main" id="cw-btn">CONNECT WALLET</div>
+                  </div>
+            </div>
+      </div>
+
+
+      <div class="my-section">
+            <div class="my-container">
+                  <div class="con-head row" id="container-1">
+                        <div class=" pointer" id="icon-fc1">
+                              <img src="assets/img/arr.svg" style="max-width: 32px;" alt="">
+                        </div>
+                        Import BUSDT in metamask.
+                  </div>
+                  <div class="con-body" id="fbody-1" style="display: none;">
+                        <b> 1. Open your metamask and click on "Assets".</b>
+                        <br>
+                        <b> 2. Click on "Import tokens".</b>
+                        <br>
+
+                        <b> 3. Paste the contract address.</b>
+                        <br>
+                        <p class="con-body-desc"> 0x51d7fdf2A714139C9F402E708482a2e60078B677 </p>
+                        <p class="con-body-desc"> - When You paste the contract address, wait for a few seconds. The
+                              token symbol and token
+                              decimals will load
+                              automatically.</p>
+                        <b> 4. Click on "Add custom token".</b>
+
+                        <br>
+                        <b> 5. Click on "Import token".</b>
+
+                        <br>
+                        <br>
+                        <div class="gif-play">
+                              <img src="assets/img/import.gif" alt="">
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="my-section" style="padding-top: 0%; display: none;">
+            <div class="my-container">
+                  <div class="con-head ">
+
+                        Transfer
+                  </div>
+                  <div class="con-body">
+                        <b> Destination address:</b>
+                        <br>
+                        <input class="trinp" id="destination" type="text" style="max-width: 50%; min-width: 300px;">
+                        <br>
+                        <br>
+                        <div class="row d-flex">
+                              <div style="max-width: 45%;">
+                                    <b> Amount:</b>
+                                    <br>
+                                    <input class="trinp" id="amount" type="number"
+                                          style="max-width: 30%; min-width: 30px;">
+                                    <br>
+                              </div>
+                              <div style="max-width: 49%; text-align: end; direction: rtl;">
+                                    <div style="width: fit-content; ">
+                                          <div class="btn-main" id="btn-send">SEND</div>
+                                    </div>
+                                    <br>
+                              </div>
+                        </div>
+
+
+
+                  </div>
+            </div>
+      </div>
+
+      <div class="my-section" style="padding-top: 0%; display: none; " id="info">
+            <div class="my-container">
+                  <div class="con-head ">
+
+                        Information
+                  </div>
+                  <div class="con-body">
+                        <b> Connected wallet address:</b>
+                        <p class="con-body-desc" id="wallet-address"></p>
+                        <b> Current Balance:</b>
+                        <p class="con-body-desc" id="d"><span id="BUSDTbalance">( loading... )</span> BUSDT</p>
+                        <b> BUSDT stable credit contract address:</b>
+                        <p class="con-body-desc" id="contract-adr"></p>
+                        <b> Connected network:</b>
+                        <p class="con-body-desc" id="network-name"></p>
+                        <b> Balance on network:</b>
+                        <p class="con-body-desc" id="balance"></p>
+
+
+
+                  </div>
+            </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
+
+      <script>
+            (function (document) {
+                  var div = document.getElementById('container-1');
+                  var icon = document.getElementById('icon-fc1');
+                  var open = false;
+
+                  div.addEventListener('click', function () {
+                        console.log('con click')
+                        if (open) {
+                              icon.className = 'pointer';
+                        } else {
+                              icon.className = 'pointer-open';
+                        }
+
+                        open = !open;
+
+
+
+                        $('#fbody-1').toggle(1200);
+                        // $('html, body').animate({
+                        //       scrollTop: $("#p-des-" + id).offset().top - 100
+                        // }, 600);
+                  });
+            })(document);
+
+            document.getElementById('btn-send').addEventListener('click', function () {
+                  var des = $('#destination')[0].value;
+                  //var amo = ethers.BigNumber.from($('#amount')[0].value)
+                  var amo = parseInt($('#amount')[0].value)
+                  console.log('    amount1: ' + amo)
+
+
+
+                  console.log('destination: ' + des + '    amount: ' + amo)
+                  var sure = window.confirm(' You are about to send ' + amo + 'BUSDT out. Are you sure?')
+                  var camo = (amo * 10 ** 18).toString();
+                  console.log('   camo amount1: ' + camo)
+                  const amount = ethers.BigNumber.from(amo).mul(ethers.BigNumber.from(10).pow(18));
+                  console.log('   amount amount : ' + amount)
+
+                  if (sure) {
+                        myContract.transfer(des, amount).then(function (res) {
+                              console.info(res)
+                        }).catch(function (res) {
+                              console.log('catche :::')
+                              console.info(res)
+                              if (res.data.message == "execution reverted: ERC20: transfer amount exceeds balance") {
+                                    window.alert("LOW BALANCE !!!")
+                              } else {
+                                    window.alert(res.data.message)
+
+                              }
+
+                        })
+                  }
+            })
+
+
+      </script>
+</body>
+
+
+<script src="assets/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
+      crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+      integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="assets/js/norenium/const.js"></script>
+<script src="assets/js/norenium/onPageWallet.js"></script>
+<script src="assets/js/norenium/indexManager.js"></script>
+<!-- <script src="assets/js/norenium/ERC20/ercFooter.js"></script> -->
+
+</html>
